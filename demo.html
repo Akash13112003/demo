@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Pricing Template</title>
+    <!-- Include Bootstrap CSS and JavaScript -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <style>
+        /* Adjust the width of the slider container */
+        .slider-container {
+            width: 100%; /* Set the width to cover the full container */
+        }
+    </style>
+</head>
+<body>
+    <!-- Pricing tables from the Bootstrap Pricing template -->
+   <div class="container" style="margin: 0 auto; padding: 20px;">
+        <div class="card-deck mb-3 text-center">
+            <!-- Pricing Table 1 -->
+            <div class="card mb-4 box-shadow">
+                <!-- Your pricing table content here -->
+                <div class="card-body">
+                    <h4 class="card-title">Plan 1</h4>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal1">Buy Now</button>
+                </div>
+            </div>
+            <!-- Pricing Table 2 -->
+            <div class="card mb-4 box-shadow">
+                <!-- Your pricing table content here -->
+                <div class="card-body">
+                    <h4 class="card-title">Plan 2</h4>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal2">Buy Now</button>
+                </div>
+            </div>
+            <!-- Pricing Table 3 -->
+            <div class="card mb-4 box-shadow">
+                <!-- Your pricing table content here -->
+                <div class="card-body">
+                    <h4 class="card-title">Plan 3</h4>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal3">Buy Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+ <!-- Modal for Plan 1 -->
+<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Order Form - Plan 1</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action ="forms.maakeetoo.com/formapi/516" method="POST">
+                    <div class="form-group">
+                        <label for="firstname">Name:</label>
+                        <input name="FirstName" type="text" class="form-control" id="firstname">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input name="Email" type="email" class="form-control" id="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="comments1">Order Comments:</label>
+                        <textarea class="form-control" id="comments1"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="makeGETRequest()">Submit Order</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Plan 2 -->
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Order Form - Plan 2</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="name2">Name:</label>
+                        <input type="text" class="form-control" id="name2">
+                    </div>
+                    <div class="form-group">
+                        <label for="email2">Email:</label>
+                        <input type="email" class="form-control" id="email2">
+                    </div>
+                    <div class="form-group">
+                        <label for="comments2">Order Comments:</label>
+                        <textarea class="form-control" id="comments2"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="makeGETRequest()">Submit Order</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Plan 3 -->
+<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Order Form - Plan 3</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="name3">Name:</label>
+                        <input type="text" class="form-control" id="name3">
+                    </div>
+                    <div class="form-group">
+                        <label for="email3">Email:</label>
+                        <input type="email" class="form-control" id="email3">
+                    </div>
+                    <div class="form-group">
+                        <label for="comments3">Order Comments:</label>
+                        <textarea class="form-control" id="comments3"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="makeGETRequest()">Submit Order</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Slider for Highlighting Plans -->
+  <div class="slider-container" style="width: 70%; margin: 0 auto; padding: 20px 0;">
+    <input type="range" min="0" max="100" value="0" class="slider" id="userSlider" style="width: 100%; height: 30px;">
+    <p class="highlighted-plan">Plan 1</p>
+</div>
+
+     
+
+    <!-- JavaScript for Slider -->
+    <script>
+        const slider = document.getElementById('userSlider');
+        const highlightedPlan = document.querySelector('.highlighted-plan');
+
+        slider.addEventListener('input', function () {
+            const value = parseInt(slider.value);
+
+            // Determine the highlighted plan based on the slider value
+            if (value >= 0 && value < 33.33) {
+                highlightedPlan.textContent = 'Plan 1';
+            } else if (value >= 33.33 && value < 66.66) {
+                highlightedPlan.textContent = 'Plan 2';
+            } else if (value >= 66.66 && value <= 100) {
+                highlightedPlan.textContent = 'Plan 3';
+            }
+        });
+
+function makeGETRequest() {
+            const accessCode = "WYVJ17RX6SIDGBRR7Z7IW35GH"; // Replace with your actual access code
+            const endpoint = "forms.maakeetoo.com/formapi/516"; // Replace with your actual endpoint URL
+
+            // Create a new XMLHttpRequest object
+            const xhr = new XMLHttpRequest();
+
+            // Configure the GET request with the custom "CODE" header
+            xhr.open("GET", endpoint);
+            xhr.setRequestHeader("CODE", accessCode);
+
+            // Define a callback function to handle the response
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) { // Request is complete
+                    if (xhr.status === 200) { // HTTP status code 200 indicates success
+                        const response = xhr.responseText;
+                        console.log("Response:", response);
+                    } else {
+                        console.error("Error:", xhr.statusText);
+                    }
+                }
+            };
+
+            // Send the GET request
+            xhr.send();
+        }
+    </script>
+</body>
+</html>
